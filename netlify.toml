@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist/online-exam-system"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

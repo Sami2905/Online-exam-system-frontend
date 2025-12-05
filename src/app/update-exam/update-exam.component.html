@@ -1,0 +1,16 @@
+<div class="update-exam-container">
+  <h2>Update Exam</h2>
+  <form [formGroup]="updateExamForm" (ngSubmit)="onUpdate()">
+    
+    <label for="examId">Exam ID:</label>
+    <input id="examId" formControlName="examId" type="number" required />
+
+    <label for="examName">Exam Name:</label>
+    <input id="examName" formControlName="examName" type="text" required />
+
+    <label for="examDate">Exam Date:</label>
+    <input id="examDate" formControlName="examDate" type="date" required />
+
+    <button type="submit" [disabled]="!updateExamForm.valid">Update Exam</button>
+  </form>
+</div>

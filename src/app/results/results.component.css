@@ -1,0 +1,149 @@
+/* Result Container */
+.result-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Heading Animation */
+.result-container h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: slideIn 0.8s ease-out 0.2s forwards;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+/* Table Rows Animation */
+tr {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInRow 0.6s ease-out forwards;
+}
+
+/* Delay Each Row */
+tr:nth-child(1) { animation-delay: 0.2s; }
+tr:nth-child(2) { animation-delay: 0.4s; }
+tr:nth-child(3) { animation-delay: 0.6s; }
+tr:nth-child(4) { animation-delay: 0.8s; }
+
+/* Table Headers */
+th {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+}
+
+/* Table Data */
+td {
+  background-color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Row Hover Effect */
+tr:hover td {
+  background: #e0f2ff;
+  transform: scale(1.02);
+}
+
+/* Paragraph */
+p {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+}
+
+/* Button with Hover Effects */
+button {
+  display: block;
+  width: 30%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1s forwards;
+}
+
+/* Button Hover Animation */
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 91, 187, 0.5);
+}
+
+/* Center Container */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(-15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInRow {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}

@@ -1,0 +1,14 @@
+<div class="home-container">
+  <div class="overlay"></div>
+  
+  <div class="welcome-box animate-fadeIn">
+    <h1>Online Exam System</h1>
+    <p class="tagline">Enhance your knowledge, test your skills!</p>
+
+    <div *ngIf="!userData" class="input-section">
+      <button (click)="navigateToLogin()" class="btn-animated">Login</button>
+    </div>
+
+    <h2 *ngIf="userData" class="welcome-text">Welcome, {{ userData.username }}!</h2>
+  </div>
+</div>

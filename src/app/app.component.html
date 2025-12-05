@@ -1,0 +1,28 @@
+<nav>
+  <div class="logo">Online Exam System</div>
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li *ngIf="!isAdmin"><a routerLink="/exams" routerLinkActive="active">Exams</a></li>
+    <li><a routerLink="/results" routerLinkActive="active">Results</a></li>
+    
+    <!-- Show only if NOT Admin -->
+    <li *ngIf="!isAdmin">
+      <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+    </li>
+
+    <!-- Show only if Admin -->
+    <li *ngIf="isAdmin">
+      <a routerLink="/manage-exams" routerLinkActive="active">Manage Exams</a>
+    </li>
+     
+    <li *ngIf="!isAdmin">
+      <a routerLink="/about" routerLinkActive="active">About us</a>
+    </li>
+
+    <li *ngIf="userData">
+      <button (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

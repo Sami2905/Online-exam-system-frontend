@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="qualification">Qualification:</label>
+        <input type="text" id="qualification" formControlName="qualification" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="userpassword">Password:</label>
+        <input type="password" id="userpassword" formControlName="userpassword" required />
+        <div *ngIf="userpassword?.invalid && userpassword?.touched" class="error">
+          <small *ngIf="userpassword?.errors?.['required']">Password is required.</small>
+          <small *ngIf="userpassword?.errors?.['minlength']">Must be at least 7 characters.</small>
+          <small *ngIf="userpassword?.errors?.['pattern']">
+            Must contain 1 uppercase, 1 number, and 1 special character.
+          </small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+  
+  

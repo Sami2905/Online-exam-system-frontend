@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Exam List</h2>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <div class="exam-list" *ngIf="exams.length > 0">
+    <div class="exam-box" *ngFor="let exam of exams">
+      <h3>{{ exam.examname }}</h3>
+      
+      <p><strong>Date:</strong> {{ exam.examdate | date: 'yyyy-MM-dd' }}</p>
+      
+<button 
+  class="start-button" 
+  [disabled]="!isExamAvailable(exam.examdate)" 
+  (click)="startExam(exam.examid)">
+  Start
+</button>
+
+    </div>
+  </div>
+
+  <p *ngIf="exams.length === 0 && !errorMessage">No exams available.</p>
+</div>

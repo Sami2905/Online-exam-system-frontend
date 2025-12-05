@@ -1,0 +1,35 @@
+<div class="exam-container">
+  <h2>Exam Questions</h2>
+
+  <!-- Timer -->
+  <p class="timer">Time Left: <strong>{{ timerDisplay }}</strong></p>
+
+  <form *ngIf="questionsForm" [formGroup]="questionsForm">
+    <div *ngIf="examQuestions.length > 0; else noQuestions">
+      <div *ngFor="let question of examQuestions; let i = index" class="question-box">
+        <p><strong>{{ i + 1 }}. {{ question.question_text }}</strong></p>
+        
+        <div formGroupName="answers">
+          <ul>
+            <li *ngFor="let option of [question.option1, question.option2, question.option3, question.option4]">
+              <label>
+                <input type="radio"
+                      [formControlName]="question.question_id" 
+                      [value]="option">
+                {{ option }}
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button type="button" (click)="submitResult()">Submit</button>
+    </div>
+  </form>
+
+  <ng-template #noQuestions>
+    <p>No questions available for this exam.</p>
+  </ng-template>
+
+  <button routerLink="/exams">Back to Exams</button>
+</div>

@@ -1,0 +1,28 @@
+<div class="results-container">
+    <h2>Submitted Exam Results</h2>
+  
+    <div *ngIf="isLoading" class="loading">Loading results...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+  
+    <table *ngIf="!isLoading && results.length" class="datatable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Exam Name</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.username }}</td>
+          <td>{{ result.email }}</td>
+          <td>{{ result.examname }}</td>
+          <td>{{ result.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="!isLoading && !results.length" class="no-results">No results found.</div>
+  </div>
+  

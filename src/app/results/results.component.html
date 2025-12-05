@@ -1,0 +1,28 @@
+<div class="result-container">
+    <h2>My Exam Results</h2>
+  
+    <div *ngIf="userResults.length > 0; else noResults">
+      <table>
+        <thead>
+          <tr>
+            <th>Exam Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of userResults">
+            <td>{{ result.examname }}</td>
+            <td>{{ result.score }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <ng-template #noResults>
+      <p>No results available for this user.</p>
+    </ng-template>
+    <div class="center-container">
+    <button routerLink="/exams">Back to Exams</button>
+    </div>
+  </div>
+  

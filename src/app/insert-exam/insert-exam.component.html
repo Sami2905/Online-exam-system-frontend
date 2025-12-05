@@ -1,0 +1,17 @@
+<div class="insert-exam-container">
+    <h2>Create Exam</h2>
+    <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
+      
+      <label for="examId">Exam ID:</label>
+      <input id="examId" type="number" formControlName="examId" required>
+      
+      <label for="examName">Exam Name:</label>
+      <input id="examName" type="text" formControlName="examName" required>
+  
+      <label for="examDate">Exam Date:</label>
+      <input id="examDate" type="date" formControlName="examDate" required>
+  
+      <button type="submit" [disabled]="examForm.invalid">Create Exam</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,98 @@
+.exam-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.exam-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.question-box {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question-box p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Options Styling */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px;
+  background-color: #f1f1f1;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+ul li:hover {
+  background-color: #e0e0e0;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+
+button {
+  display: block;
+  width: 30%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Back Button */
+button[routerLink="/exams"] {
+  background-color: #6c757d;
+}
+
+button[routerLink="/exams"]:hover {
+  background-color: #5a6268;
+}
+
+/* No Questions Message */
+p {
+  text-align: center;
+  color: #777;
+  font-size: 16px;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  text-align: right;
+  margin-bottom: 10px;
+}

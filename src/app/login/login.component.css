@@ -1,0 +1,112 @@
+.login-container {
+  width: 320px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #4154c0, #fad0c4);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 22px;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Slide-in effect */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+  animation: fadeIn 0.7s ease-in-out forwards;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Glowing effect on focus */
+input:focus {
+  border-color: #ff008c;
+  box-shadow: 0 0 8px rgba(255, 0, 140, 0.6);
+}
+
+/* Button animations */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff008c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #c7006a;
+  transform: scale(1.05);
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Styled links */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #c7006a;
+  transform: scale(1.1);
+}
